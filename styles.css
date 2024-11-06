@@ -1,3 +1,5 @@
+
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -6,9 +8,136 @@
 
 body {
     height: 100vh;
-    width: 100vw;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Fraunces', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(30, 38%, 92%);
+}
+
+.container {
+    border-radius: 15px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    overflow: hidden;
+    align-items: stretch;
+}
+
+.side1, .side2 {
+    width: 50%;
+}
+
+.side1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.side2 {
     display: flex;
     flex-direction: column;
-    background-color: (30, 38%, 92%);
+    align-items: center;
+    padding: 25px;
+}
+
+p, h1, h5 {
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+h5 {
+    color: hsl(228, 12%, 48%, 0.8);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-family: 'Montserrat';
+}
+
+.perfume {
+    font-family: 'Montserrat';
+    letter-spacing: 0.5rem;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+.numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.big-number {
+    color: hsl(158, 36%, 37%);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.small-number {
+   margin-top: 20px;
+   color: rgb(120, 119, 119);
+   text-decoration: line-through;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(158, 36%, 37%);
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 30px;
+    transition: transform 0.2s ease;
+}
+
+.cart:hover {
+    cursor: pointer;
+    background-color: hsl(146, 54%, 24%);
+    transform: translateY(-1px) scale(0.98);
+}
+
+.cart p {
+    margin-bottom: 0;
+}
+
+.cart img {
+    margin-right: 8px;
+    height: 22px;
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack the sections vertically */
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .side1, .side2 {
+        width: 100%;
+        height: auto; /* Allow flexible height */
+    }
+
+    .side1 img {
+        height: auto; /* Image adjusts to content */
+    }
+
+    .cart {
+        width: 100%; /* Full-width button on mobile */
+    }
 }
